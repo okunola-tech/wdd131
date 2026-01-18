@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Mobile First CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/temples.css">
   <link rel="stylesheet" href="styles/temples-large.css">
 
@@ -23,14 +23,22 @@
 <header>
   <h1>Temple Album</h1>
 
-  <button id="menuButton" aria-label="Toggle Navigation Menu">☰</button>
+  <button
+    id="menuButton"
+    aria-label="Toggle Navigation Menu"
+    aria-controls="navMenu"
+    aria-expanded="false">
+    ☰
+  </button>
 
   <nav id="navMenu">
-    <a href="#">Home</a>
-    <a href="#">Old</a>
-    <a href="#">New</a>
-    <a href="#">Large</a>
-    <a href="#">Small</a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Old</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Large</a></li>
+      <li><a href="#">Small</a></li>
+    </ul>
   </nav>
 </header>
 
@@ -91,6 +99,5 @@
   <p>© <span id="year"></span> | Nurudeen Okunola | WDD 131</p>
   <p>Last Modified: <span id="lastModified"></span></p>
 </footer>
-
 </body>
 </html>

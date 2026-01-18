@@ -1,14 +1,17 @@
-@media only screen and (min-width: 32rem) {
+@media (min-width: 768px) {
 
   #menuButton {
     display: none;
   }
 
   nav {
-    display: flex !important;
+    display: block;
+    width: auto;
+  }
+
+  nav ul {
     flex-direction: row;
-    background: none;
-    gap: 1rem;
+    justify-content: center;
   }
 
   nav a {
