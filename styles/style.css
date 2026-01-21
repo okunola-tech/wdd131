@@ -1,55 +1,81 @@
+/* Global Variables */
 :root {
-    --primary-color: #003366;
-    --accent-color: #ffcc00;
-    --background-color: #ffffff;
-    --text-color: #222222;
+  --primary-color: #bc002d; /* Japan red */
+  --secondary-color: #ffffff;
+  --background-color: #f5f5f5;
+  --text-color: #222;
+  --card-bg: #ffffff;
 }
 
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 header {
-    text-align: center;
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 1.5rem;
+}
+
+main {
+  padding: 1rem;
 }
 
 .hero img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.weather {
-    text-align: center;
-    margin: 2rem 0;
-    position: relative;
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
 }
 
-.weather-emoticon::after {
-    content: "⛅";
-    font-size: 2rem;
-    margin-left: 0.5rem;
+/* Weather */
+.weather-icon {
+  width: 50px;
+  margin: 0.5rem 0;
 }
 
-.mobile-weather {
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-top: 2rem;
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+  main {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .weather-icon {
     display: none;
+  }
+
+  /* Pseudo-element emoticon (desktop only) */
+  .weather-heading::after {
+    content: " ⛅";
+  }
 }
 
-.about {
-    padding: 1rem;
-}
-
-/* Media Queries */
-@media (max-width: 600px) {
-    .weather-emoticon {
-        display: none;
-    }
-    .mobile-weather {
-        display: inline-block;
-    }
-}

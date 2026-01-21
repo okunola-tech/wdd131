@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japan Travel Guide</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Japan Travel Guide</title>
+
+  <meta name="description" content="Explore Japan’s culture, climate, and geography through this responsive country page project.">
+  <meta name="author" content="Nurudeen Okunola">
+
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to Japan</h1>
-        <p class="intro">Explore the culture, sights and weather of Japan!</p>
-    </header>
+  <header>
+    <h1>Welcome to Japan</h1>
+  </header>
 
-    <main>
-        <!-- Hero Image with srcset -->
-        <section class="hero">
-            <picture>
-  <source srcset="images/japan-small.webp" media="(max-width: 500px)">
-  <source srcset="images/japan-medium.webp" media="(max-width: 1000px)">
-  <img src="images/japan-large.webp" alt="Japan landscape">
-</picture>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <picture>
+        <source srcset="images/japan-small.webp" media="(max-width: 500px)">
+        <source srcset="images/japan-medium.webp" media="(max-width: 1000px)">
+        <img src="images/japan-large.webp" alt="Japan landscape">
+      </picture>
+    </section>
 
-        </section>
+    <!-- About -->
+    <section class="card">
+      <h2>About Japan</h2>
+      <p>
+        Japan is an island nation in East Asia known for its rich culture, advanced technology,
+        beautiful landscapes, and deep traditions.
+      </p>
+    </section>
 
-        <!-- Weather Section -->
-        <section class="weather">
-            <h2>Weather
-                <span class="weather-emoticon"></span> <!-- pseudo-element emoticon for desktop -->
-            </h2>
-            <p>Temperature: <span id="temperature">8</span> °C</p>
-            <p>Wind Speed: <span id="windspeed">20</span> km/h</p>
-            <p>Wind Chill: <span id="windchill">--</span></p>
-            <!-- Mobile SVG icon -->
-            <p class="mobile-weather">
-                <img src="images/weather.svg" alt="Weather Icon">
-            </p>
-        </section>
+    <!-- Weather -->
+    <section class="card weather">
+      <h2 class="weather-heading">Weather</h2>
 
-        <!-- About Section -->
-        <section class="about">
-            <h2>About Japan</h2>
-            <p>Japan is an island country in East Asia, known for its beautiful landscapes, rich culture, and modern cities.</p>
-        </section>
-    </main>
+      <!-- Mobile SVG -->
+      <img src="images/weather.svg" alt="Weather icon" class="weather-icon">
 
-    <footer>
-        <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
-    </footer>
+      <p>Temperature: <span id="temp">8</span>°C</p>
+      <p>Wind Speed: <span id="wind">10</span> km/h</p>
+      <p>Wind Chill: <span id="windchill"></span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> | Nurudeen Okunola |
+      Last Modified: <span id="lastModified"></span>
+    </p>
+  </footer>
 </body>
 </html>
