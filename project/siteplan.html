@@ -2,72 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Site Plan – FitLife Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Plan – FitLife Tracker</title>
+    <meta name="description" content="Planning document for FitLife Tracker, a fitness website to track workouts, progress, and provide health tips.">
+    <meta name="author" content="Nurudeen Okunola">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary-color: #2b7a78;
-            --secondary-color: #def2f1;
-            --accent-color: #17252a;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--secondary-color);
-            color: var(--accent-color);
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        main {
-            padding: 1.5rem;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        section {
-            margin-bottom: 2rem;
-        }
-
-        h1, h2 {
-            color: var(--primary-color);
-        }
-
-        .color-box {
-            display: inline-block;
-            width: 120px;
-            height: 40px;
-            margin-right: 1rem;
-            border: 1px solid #000;
-        }
-
-        .wireframe {
-            background-color: white;
-            border: 2px dashed var(--primary-color);
-            padding: 1rem;
-            margin-top: 1rem;
-        }
-
-        footer {
-            background-color: var(--accent-color);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/siteplan.css">
 </head>
 
 <body>
@@ -106,30 +52,15 @@
 
     <section>
         <h2>Color Scheme</h2>
-        <p>
-            The following colors will be used throughout the website:
-        </p>
-        <div>
-            <div class="color-box" style="background-color:#2b7a78;"></div>
-            <strong>#2b7a78</strong> – Headings, navigation, accents
-        </div>
-        <br>
-        <div>
-            <div class="color-box" style="background-color:#def2f1;"></div>
-            <strong>#def2f1</strong> – Background color
-        </div>
-        <br>
-        <div>
-            <div class="color-box" style="background-color:#17252a;"></div>
-            <strong>#17252a</strong> – Body text and footer
-        </div>
+        <p>The following colors will be used throughout the website:</p>
+        <div class="color-box primary-color"></div> <strong>#2b7a78</strong> – Headings, navigation, accents<br>
+        <div class="color-box secondary-color"></div> <strong>#def2f1</strong> – Background color<br>
+        <div class="color-box accent-color"></div> <strong>#17252a</strong> – Body text and footer
     </section>
 
     <section>
         <h2>Typography</h2>
-        <p>
-            <strong>Roboto</strong> will be used throughout the site.
-        </p>
+        <p><strong>Roboto</strong> will be used throughout the site.</p>
         <ul>
             <li>Headings: Roboto Bold</li>
             <li>Body text: Roboto Regular</li>
@@ -138,7 +69,6 @@
 
     <section>
         <h2>Wireframes</h2>
-
         <h3>Mobile View</h3>
         <div class="wireframe">
             <p>[Logo]</p>
