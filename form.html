@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Product Review Form</title>
-    <meta name="description" content="Product review form for submitting feedback, ratings, and installation details.">
+    <meta name="description" content="Product review form for submitting feedback and ratings.">
     <meta name="author" content="Nurudeen Okunola">
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="styles/form.css">
-
-    <!-- JS -->
     <script src="scripts/form.js" defer></script>
 </head>
 
@@ -38,20 +34,30 @@
     <fieldset>
         <legend>Overall Rating <span class="required">*</span></legend>
 
-        <input type="radio" id="rate1" name="rating" value="1" required>
-        <label for="rate1">☆</label>
+        <label>
+            <input type="radio" id="rating1" name="rating" value="1" required>
+            ☆
+        </label>
 
-        <input type="radio" id="rate2" name="rating" value="2">
-        <label for="rate2">☆☆</label>
+        <label>
+            <input type="radio" id="rating2" name="rating" value="2" required>
+            ☆☆
+        </label>
 
-        <input type="radio" id="rate3" name="rating" value="3">
-        <label for="rate3">☆☆☆</label>
+        <label>
+            <input type="radio" id="rating3" name="rating" value="3" required>
+            ☆☆☆
+        </label>
 
-        <input type="radio" id="rate4" name="rating" value="4">
-        <label for="rate4">☆☆☆☆</label>
+        <label>
+            <input type="radio" id="rating4" name="rating" value="4" required>
+            ☆☆☆☆
+        </label>
 
-        <input type="radio" id="rate5" name="rating" value="5">
-        <label for="rate5">☆☆☆☆☆</label>
+        <label>
+            <input type="radio" id="rating5" name="rating" value="5" required>
+            ☆☆☆☆☆
+        </label>
     </fieldset>
 
     <!-- Date -->
@@ -62,24 +68,32 @@
     <fieldset>
         <legend>Useful Features</legend>
 
-        <input type="checkbox" id="feature1" name="features" value="durability">
-        <label for="feature1">Durability</label>
+        <label>
+            <input type="checkbox" id="feature1" name="features" value="durability">
+            Durability
+        </label>
 
-        <input type="checkbox" id="feature2" name="features" value="ease">
-        <label for="feature2">Ease of Use</label>
+        <label>
+            <input type="checkbox" id="feature2" name="features" value="ease">
+            Ease of Use
+        </label>
 
-        <input type="checkbox" id="feature3" name="features" value="design">
-        <label for="feature3">Design</label>
+        <label>
+            <input type="checkbox" id="feature3" name="features" value="design">
+            Design
+        </label>
 
-        <input type="checkbox" id="feature4" name="features" value="performance">
-        <label for="feature4">Performance</label>
+        <label>
+            <input type="checkbox" id="feature4" name="features" value="performance">
+            Performance
+        </label>
     </fieldset>
 
     <!-- Review -->
     <label for="review">Written Review</label>
     <textarea id="review" name="review" rows="4"></textarea>
 
-    <!-- User Name -->
+    <!-- Name -->
     <label for="username">Your Name</label>
     <input type="text" id="username" name="username">
 
@@ -94,4 +108,3 @@
 </footer>
 </body>
 </html>
-
