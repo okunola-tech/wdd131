@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Product Review Form</title>
     <meta name="description" content="Product review form for submitting feedback and ratings.">
     <meta name="author" content="Nurudeen Okunola">
+
+    <title>Product Review Form</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,85 +22,67 @@
 </header>
 
 <main>
-<form method="get" action="review.html">
+    <form method="get" action="review.html">
 
-    <!-- Product Name -->
-    <label for="product">Product Name <span class="required">*</span></label>
-    <select id="product" name="product" required>
-        <option value="" disabled selected>Select a Product ...</option>
-    </select>
+        <!-- Product Name -->
+        <label for="product">Product Name <span class="required">*</span></label>
+        <select id="product" name="product" required>
+            <option value="" disabled selected>Select a Product ...</option>
+        </select>
 
-    <!-- Rating -->
-    <fieldset>
-        <legend>Overall Rating <span class="required">*</span></legend>
+        <!-- Overall Rating -->
+        <fieldset>
+            <legend>Overall Rating <span class="required">*</span></legend>
 
-        <label>
             <input type="radio" id="rating1" name="rating" value="1" required>
-            ☆
-        </label>
+            <label for="rating1">☆</label>
 
-        <label>
             <input type="radio" id="rating2" name="rating" value="2" required>
-            ☆☆
-        </label>
+            <label for="rating2">☆☆</label>
 
-        <label>
             <input type="radio" id="rating3" name="rating" value="3" required>
-            ☆☆☆
-        </label>
+            <label for="rating3">☆☆☆</label>
 
-        <label>
             <input type="radio" id="rating4" name="rating" value="4" required>
-            ☆☆☆☆
-        </label>
+            <label for="rating4">☆☆☆☆</label>
 
-        <label>
             <input type="radio" id="rating5" name="rating" value="5" required>
-            ☆☆☆☆☆
-        </label>
-    </fieldset>
+            <label for="rating5">☆☆☆☆☆</label>
+        </fieldset>
 
-    <!-- Date -->
-    <label for="install-date">Date of Installation <span class="required">*</span></label>
-    <input type="date" id="install-date" name="install-date" required>
+        <!-- Date of Installation -->
+        <label for="install-date">Date of Installation <span class="required">*</span></label>
+        <input type="date" id="install-date" name="install-date" required>
 
-    <!-- Features -->
-    <fieldset>
-        <legend>Useful Features</legend>
+        <!-- Useful Features -->
+        <fieldset>
+            <legend>Useful Features</legend>
 
-        <label>
             <input type="checkbox" id="feature1" name="features" value="durability">
-            Durability
-        </label>
+            <label for="feature1">Durability</label>
 
-        <label>
-            <input type="checkbox" id="feature2" name="features" value="ease">
-            Ease of Use
-        </label>
+            <input type="checkbox" id="feature2" name="features" value="ease-of-use">
+            <label for="feature2">Ease of Use</label>
 
-        <label>
             <input type="checkbox" id="feature3" name="features" value="design">
-            Design
-        </label>
+            <label for="feature3">Design</label>
 
-        <label>
             <input type="checkbox" id="feature4" name="features" value="performance">
-            Performance
-        </label>
-    </fieldset>
+            <label for="feature4">Performance</label>
+        </fieldset>
 
-    <!-- Review -->
-    <label for="review">Written Review</label>
-    <textarea id="review" name="review" rows="4"></textarea>
+        <!-- Written Review -->
+        <label for="review">Written Review</label>
+        <textarea id="review" name="review" rows="4"></textarea>
 
-    <!-- Name -->
-    <label for="username">Your Name</label>
-    <input type="text" id="username" name="username">
+        <!-- User Name -->
+        <label for="username">Your Name</label>
+        <input type="text" id="username" name="username">
 
-    <!-- Submit -->
-    <input type="submit" value="Submit Review">
+        <!-- Submit -->
+        <input type="submit" value="Submit Review">
 
-</form>
+    </form>
 </main>
 
 <footer>
@@ -108,3 +90,4 @@
 </footer>
 </body>
 </html>
+
