@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact CineScope.">
+  <title>CineScope | Contact</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1>CineScope</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="movies.html">Movies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section>
+  <h2>Contact Us</h2>
+
+  <form id="contactForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" required>
+
+    <label for="genre">Favorite Genre</label>
+    <select id="genre">
+      <option value="Action">Action</option>
+      <option value="Drama">Drama</option>
+      <option value="Sci-Fi">Sci-Fi</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="formMessage"></p>
+
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> CineScope</p>
+  <a href="references.html">References</a>
+</footer>
+
+</body>
+</html>
