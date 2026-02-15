@@ -1,5 +1,5 @@
 // ===============================
-// MOVIE & TV SHOW DATA
+// MOVIE & TV SHOW DATA (all lowercase paths)
 // ===============================
 
 const media = [
@@ -9,7 +9,7 @@ const media = [
     type: "Movie",
     genre: "Sci-Fi",
     year: 2010,
-    image: "images/inception.jpg"
+    image: "./images/inception.jpg"  // relative to project folder
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const media = [
     type: "Movie",
     genre: "Action",
     year: 2008,
-    image: "images/dark-knight.jpg"
+    image: "./images/dark-knight.jpg"
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const media = [
     type: "TV Show",
     genre: "Drama",
     year: 2008,
-    image: "images/breaking-bad.jpg"
+    image: "./images/breaking-bad.jpg"
   }
 ];
 
