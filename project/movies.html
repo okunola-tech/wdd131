@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse movies and TV shows by genre.">
+  <meta name="description" content="Browse movies and TV shows by genre on CineScope.">
   <title>CineScope | Movies</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
@@ -13,41 +13,44 @@
 
 <header>
   <h1>CineScope</h1>
-  <nav>
-    <ul class="nav-links">
+  <nav aria-label="Main Navigation">
+    <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="movies.html">Movies</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="movies.html" aria-current="page">Movies</a></li>
+      <li><a href="contact.html">Reviews</a></li>
+      <li><a href="references.html">References</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
 
-<section>
-  <h2>Browse by Genre</h2>
-  <select id="genreSelect">
-    <option value="All">All</option>
-    <option value="Action">Action</option>
-    <option value="Drama">Drama</option>
-    <option value="Sci-Fi">Sci-Fi</option>
-  </select>
-</section>
+  <section class="filter-section">
+    <h2>Browse by Genre</h2>
+    <label for="genreSelect">Select Genre</label>
+    <select id="genreSelect">
+      <option value="All">All</option>
+      <option value="Action">Action</option>
+      <option value="Drama">Drama</option>
+      <option value="Sci-Fi">Sci-Fi</option>
+    </select>
+  </section>
 
-<section>
-  <div id="movieContainer" class="movie-grid"></div>
-</section>
+  <section aria-labelledby="movieListHeading">
+    <h2 id="movieListHeading">Available Titles</h2>
+    <div id="movieContainer" class="grid"></div>
+  </section>
 
-<section>
-  <h2>Your Favorites</h2>
-  <ul id="favoritesList"></ul>
-</section>
+  <section aria-labelledby="favoritesHeading">
+    <h2 id="favoritesHeading">Your Favorites</h2>
+    <ul id="favoritesList" class="favorites-list"></ul>
+  </section>
 
 </main>
 
 <footer>
-  <p>&copy; <span id="year"></span> CineScope</p>
-  <a href="references.html">References</a>
+  <p>&copy; <span id="year"></span> CineScope | WDD131 Project</p>
+  <p><a href="references.html">References</a></p>
 </footer>
 
 </body>

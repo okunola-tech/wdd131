@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact CineScope.">
-  <title>CineScope | Contact</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Submit a Review | Movie & TV Explorer</title>
+    <meta name="description" content="Submit and view movie and TV show reviews.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
 </head>
-
 <body>
 
 <header>
-  <h1>CineScope</h1>
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="movies.html">Movies</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <h1>Movie & TV Explorer</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="contact.html" aria-current="page">Reviews</a></li>
+            <li><a href="references.html">References</a></li>
+        </ul>
+    </nav>
 </header>
 
 <main>
+    <section class="form-section">
+        <h2>Submit a Review</h2>
 
-<section>
-  <h2>Contact Us</h2>
+        <form id="reviewForm" novalidate>
+            <div class="form-group">
+                <label for="title">Movie/TV Title</label>
+                <input type="text" id="title" required>
+            </div>
 
-  <form id="contactForm">
-    <label for="name">Full Name</label>
-    <input type="text" id="name" required>
+            <div class="form-group">
+                <label for="rating">Rating (1–5)</label>
+                <select id="rating" required>
+                    <option value="">Choose rating</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            </div>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" required>
+            <div class="form-group">
+                <label for="review">Your Review</label>
+                <textarea id="review" rows="4" required></textarea>
+            </div>
 
-    <label for="genre">Favorite Genre</label>
-    <select id="genre">
-      <option value="Action">Action</option>
-      <option value="Drama">Drama</option>
-      <option value="Sci-Fi">Sci-Fi</option>
-    </select>
+            <button type="submit" class="btn-primary">Publish Review</button>
+        </form>
 
-    <button type="submit">Submit</button>
-  </form>
+        <div id="confirmation" role="status" aria-live="polite"></div>
+    </section>
 
-  <p id="formMessage"></p>
+    <section class="review-display">
+        <h2>Community Reviews</h2>
 
-</section>
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Search reviews..." 
+            aria-label="Search reviews">
 
+        <div id="reviewList"></div>
+    </section>
 </main>
 
 <footer>
-  <p>&copy; <span id="year"></span> CineScope</p>
-  <a href="references.html">References</a>
+    <p>&copy; 2026 Movie & TV Explorer | WDD131 Project</p>
 </footer>
 
 </body>

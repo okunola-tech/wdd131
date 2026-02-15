@@ -1,73 +1,231 @@
+/* ==========================
+   VARIABLES
+========================== */
+:root {
+    --primary: #111827;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --background: #f9fafb;
+    --card-bg: #ffffff;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --radius: 10px;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    --transition: 0.3s ease;
+}
+
+/* ==========================
+   RESET & GLOBAL
+========================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #111;
-  color: white;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
+/* ==========================
+   HEADER & NAV
+========================== */
 header {
-  background: #000;
-  padding: 1rem;
+    background: var(--primary);
+    color: #fff;
+    padding: 1.8rem 1rem;
+    text-align: center;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
 }
 
-.hero {
-  text-align: center;
-  padding: 2rem;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity var(--transition);
 }
 
-.movie-grid {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem;
+nav a:hover,
+nav a:focus {
+    opacity: 0.8;
+}
+
+/* ==========================
+   HERO / FILTER SECTION
+========================== */
+.filter-section {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.filter-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+select {
+    width: 250px;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    transition: border var(--transition), box-shadow var(--transition);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================
+   GRID / CARDS
+========================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
 }
 
 .movie-card {
-  background: #222;
-  padding: 1rem;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .movie-card:hover {
-  transform: scale(1.03);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 .movie-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 6px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
-button {
-  background: red;
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
+.movie-card h3 {
+    margin: 1rem 0 0.5rem;
 }
 
+.movie-card p {
+    margin: 0.2rem 0;
+    color: var(--text-light);
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+.movie-card button,
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition);
+    margin-top: 0.8rem;
+}
+
+.movie-card button:hover,
+.btn-primary:hover {
+    background: var(--accent-hover);
+}
+
+.remove-btn {
+    background: var(--danger);
+    margin-top: 0.5rem;
+}
+
+.remove-btn:hover {
+    background: var(--danger-hover);
+}
+
+/* ==========================
+   FAVORITES LIST
+========================== */
+.favorites-list {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    list-style: none;
+}
+
+.favorites-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.favorites-list li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================
+   FOOTER
+========================== */
 footer {
-  text-align: center;
-  padding: 1rem;
-  background: #000;
-  margin-top: 2rem;
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
 }
 
-@media (min-width: 768px) {
-  .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    select {
+        width: 100%;
+    }
+
+    .movie-card img {
+        height: 220px;
+    }
 }

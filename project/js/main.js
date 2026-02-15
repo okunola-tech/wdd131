@@ -1,108 +1,152 @@
-const movies = [
+// ===============================
+// MOVIE & TV SHOW DATA
+// ===============================
+
+const media = [
   {
+    id: 1,
     title: "Inception",
+    type: "Movie",
     genre: "Sci-Fi",
     year: 2010,
     image: "images/inception.jpg"
   },
   {
+    id: 2,
     title: "The Dark Knight",
+    type: "Movie",
     genre: "Action",
     year: 2008,
     image: "images/dark-knight.jpg"
   },
   {
+    id: 3,
     title: "Breaking Bad",
+    type: "TV Show",
     genre: "Drama",
     year: 2008,
     image: "images/breaking-bad.jpg"
   }
 ];
 
-function displayMovies(list, containerId) {
-  const container = document.querySelector(containerId);
-  if (!container) return;
+// ===============================
+// DOM ELEMENTS
+// ===============================
 
+const container = document.querySelector("#movieContainer");
+const genreSelect = document.querySelector("#genreSelect");
+const favoritesList = document.querySelector("#favoritesList");
+const yearSpan = document.querySelector("#year");
+
+// ===============================
+// FOOTER YEAR
+// ===============================
+
+yearSpan.textContent = new Date().getFullYear();
+
+// ===============================
+// LOCAL STORAGE
+// ===============================
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+// ===============================
+// DISPLAY MEDIA
+// ===============================
+
+function displayMedia(mediaArray) {
   container.innerHTML = "";
 
-  list.forEach(movie => {
+  mediaArray.forEach(item => {
+    const isFavorite = favorites.includes(item.id);
+
     container.innerHTML += `
       <div class="movie-card">
-        <img 
-          src="${movie.image}" 
-          alt="Poster of ${movie.title}" 
-          loading="lazy"
-          width="200"
-          height="300"
-        >
-        <h3>${movie.title}</h3>
-        <p>${movie.genre} • ${movie.year}</p>
-        <button onclick="addFavorite('${movie.title}')">
-          Add to Favorites
+        <img src="${item.image}" alt="${item.title}" loading="lazy">
+        <h3>${item.title}</h3>
+        <p>Type: ${item.type}</p>
+        <p>Genre: ${item.genre}</p>
+        <p>Year: ${item.year}</p>
+        <button data-id="${item.id}">
+          ${isFavorite ? "Remove Favorite" : "Add to Favorites"}
         </button>
       </div>
     `;
   });
 }
 
-function filterMovies(genre) {
-  if (genre === "All") {
-    return movies;
+// ===============================
+// FILTER BY GENRE
+// ===============================
+
+function filterMedia() {
+  const selectedGenre = genreSelect.value;
+
+  if (selectedGenre === "All") {
+    displayMedia(media);
   } else {
-    return movies.filter(movie => movie.genre === genre);
+    const filtered = media.filter(item => item.genre === selectedGenre);
+    displayMedia(filtered);
   }
 }
 
-function addFavorite(title) {
-  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  if (!favorites.includes(title)) {
-    favorites.push(title);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+// ===============================
+// TOGGLE FAVORITE
+// ===============================
+
+function toggleFavorite(id) {
+  const mediaId = Number(id);
+
+  if (favorites.includes(mediaId)) {
+    favorites = favorites.filter(fav => fav !== mediaId);
+  } else {
+    favorites.push(mediaId);
   }
-  loadFavorites();
+
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  filterMedia();
+  displayFavorites();
 }
 
-function loadFavorites() {
-  const list = document.querySelector("#favoritesList");
-  if (!list) return;
+// ===============================
+// DISPLAY FAVORITES
+// ===============================
 
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  list.innerHTML = "";
+function displayFavorites() {
+  favoritesList.innerHTML = "";
 
-  favorites.forEach(item => {
-    list.innerHTML += `<li>${item}</li>`;
+  const favoriteItems = media.filter(item =>
+    favorites.includes(item.id)
+  );
+
+  if (favoriteItems.length === 0) {
+    favoritesList.innerHTML = `<li>No favorites selected yet.</li>`;
+    return;
+  }
+
+  favoriteItems.forEach(item => {
+    favoritesList.innerHTML += `
+      <li>${item.title} (${item.year})</li>
+    `;
   });
 }
 
-function handleForm() {
-  const form = document.querySelector("#contactForm");
-  if (!form) return;
+// ===============================
+// EVENT LISTENERS
+// ===============================
 
-  form.addEventListener("submit", event => {
-    event.preventDefault();
-    const name = document.querySelector("#name").value;
-    const message = document.querySelector("#formMessage");
-    message.textContent = `Thank you ${name}! We received your submission.`;
-  });
-}
+genreSelect.addEventListener("change", filterMedia);
 
-document.addEventListener("DOMContentLoaded", () => {
-
-  const year = document.querySelector("#year");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
-  displayMovies(movies, "#featuredContainer");
-  displayMovies(movies, "#movieContainer");
-  loadFavorites();
-  handleForm();
-
-  const genreSelect = document.querySelector("#genreSelect");
-  if (genreSelect) {
-    genreSelect.addEventListener("change", event => {
-      const filtered = filterMovies(event.target.value);
-      displayMovies(filtered, "#movieContainer");
-    });
+container.addEventListener("click", event => {
+  if (event.target.tagName === "BUTTON") {
+    const id = event.target.getAttribute("data-id");
+    toggleFavorite(id);
   }
 });
+
+// ===============================
+// INITIAL LOAD
+// ===============================
+
+displayMedia(media);
+displayFavorites();
